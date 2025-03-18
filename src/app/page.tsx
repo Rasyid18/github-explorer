@@ -62,7 +62,7 @@ export default function Page() {
 					</VStack>
 				</Container>
 			)}
-			{!isLoading && !data && <Text>Click to generate</Text>}
+			{!isLoading && !data && <Text>Enter search key to show result</Text>}
 			{!isLoading && data && (
 				<Container maxWidth={"6xl"} px={2}>
 					<Accordion.Root collapsible lazyMount unmountOnExit>
