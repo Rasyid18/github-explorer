@@ -17,7 +17,7 @@ export default function UserList({ user }: { user: any }) {
 			</Accordion.ItemTrigger>
 			<Accordion.ItemContent>
 				<Accordion.ItemBody>
-					<RepositoriesList id={user.id} user={user.login} />
+					<RepositoriesList user={user.login} />
 				</Accordion.ItemBody>
 			</Accordion.ItemContent>
 		</Accordion.Item>

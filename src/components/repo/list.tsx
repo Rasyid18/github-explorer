@@ -1,33 +1,19 @@
 "use client";
 
-import { Badge, Box, Card, For, Group, Icon, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Badge, Box, Card, Group, Icon, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { GoStar } from "react-icons/go";
 import useSWR from "swr";
 import LoadingRepositories from "./loading";
+import fetchData from "@/utils/fetchData";
 
-async function fetchData(url: string) {
-	const options = {
-		method: "GET",
-		headers: {
-			Accept: "application/vnd.github+json, application/json",
-			"User-Agent": "Github-Explorer/1.0",
-		},
-	};
-
-	return await fetch(url, options).then((r) => r.json());
-}
-
-export default function RepositoriesList({ id, user }: { id: number; user: string }) {
-	const { data, error, mutate, isLoading } = useSWR(`https://api.github.com/users/${encodeURIComponent(user)}/repos`, fetchData);
+export default function RepositoriesList({ user }: { user: string }) {
+	const { data, error, isLoading } = useSWR(`https://api.github.com/users/${encodeURIComponent(user)}/repos`, fetchData);
 
 	return (
 		<Box>
-			{isLoading && (
-				<SimpleGrid columns={{ md: 3, smDown: 1 }} gap={5}>
-					<For each={[1, 2, 3, 4, 5, 6, 7, 8, 9]}>{(item: number) => <LoadingRepositories key={`loading-repo-${item}`} />}</For>{" "}
-				</SimpleGrid>
-			)}
+			{isLoading && <LoadingRepositories />}
+			{error && <Text>Something went wrong: {error.message}</Text>}
 			{!isLoading && (
 				<SimpleGrid columns={{ md: 3, smDown: 1 }} gap={5}>
 					{data.length > 0 ? (
