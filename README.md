@@ -1,6 +1,6 @@
 # GitHub User Search and Repositories Viewer
 
-A responsive web application built with **React.js** and **Next.js** that leverages the GitHub API to search for users and display their repositories. This project was developed as a coding test for a Frontend Developer position and uses the **Accordion** component from **Chakra UI** to elegantly present repository details.
+A responsive web application built with **React.js** and **Next.js** that leverages the GitHub API to search for users and display their repositories. This project was developed as a coding test for a Frontend Developer position and uses the **Accordion** component from **Chakra UI** to elegantly present repository details. This project can be accesed via [Github Explorer](https://rasyid18.github.io/github-explorer/)
 
 ## Table of Contents
 - [Overview](#overview)
