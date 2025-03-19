@@ -7,7 +7,7 @@ export default function UserSearch({ isLoading, onSearch }: { isLoading: boolean
 	const [inputValue, setInputValue] = useState("");
 
 	const handleInputValue = (e: any) => {
-		let code = e.keyCode || e.charCode;
+		const code = e.keyCode || e.charCode;
 		if (code === 13) {
 			e.preventDefault();
 			e.stopPropagation();
