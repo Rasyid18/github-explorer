@@ -57,7 +57,7 @@ Open http://localhost:3000 in your browser to view the application.
 
 ## API Integration
 - **User Search:** Uses GitHub’s [Search Users API](https://docs.github.com/en/rest/reference/search#search-users) to find users based on the search key.
-- **Repository Data:** Uses GitHub’s [List Repositories API](https://docs.github.com/en/rest/reference/repos#list-repositories-for-a-user) to fetch repositories of the selected user.
+- **Repository Data:** Uses GitHub’s [List Repositories API](https://docs.github.com/en/rest/repos/repos#list-repositories-for-a-user) to fetch repositories of the selected user.
 - **Error Handling:** Includes basic error handling for API requests to ensure a smooth user experience.
 
 ## Possible Improvements
